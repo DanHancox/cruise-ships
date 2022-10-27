@@ -20,5 +20,14 @@ describe('Ship', () => {
         const ship = new Ship(port)
         expect(ship.currentPort).toBe(port)
     })
+    it('can change ports and dock', () => {
+        const Dover = new Port ("Dover")
+        const ship = new Ship(Dover)
+
+        const brighton = new Port("Brighton")
+        ship.dock(brighton);
+
+        expect(ship.currentPort).toEqual(brighton)
+    })   
 })
 
