@@ -1,3 +1,4 @@
+const Port = require("./Port");
 
 class Ship
 {
@@ -15,3 +16,4 @@ class Ship
 };
 
 module.exports = Ship;
+// getters for passengers
