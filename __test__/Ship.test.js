@@ -3,8 +3,11 @@ const Port = require('../src/Port.js')
 const Itinerary = require('../src/Itinerary')
 
 describe('Ship', () => {
-    it('can be instantiated', () => {
-        expect(new Ship()).toBeInstanceOf(Object);
+    it('can be instantiated', () => {       
+        const port = new Port('Dover')
+        const itinerary = new Itinerary ([port]);
+        const ship = new Ship (itinerary)
+        expect(ship).toBeInstanceOf(Object);
     })
     
     it('has a starting port', () => {
@@ -25,13 +28,14 @@ describe('Ship', () => {
         ship.setSail();
 
         expect(ship.currentPort).toBeFalsy();
+        expect(dover.ships).not.toContain(ship);
     })
     it('Has a currentPort', () => {
         const port = new Port ("Dover")
         const ship = new Ship(port)
         expect(ship.currentPort).toBe(port)
     })
-    it('can change ports and dock', () => {
+    it('can dock at different port', () => {
         const dover = new Port ("Dover")
         const brighton = new Port("Brighton")
         const itinerary = new Itinerary([dover, brighton])
