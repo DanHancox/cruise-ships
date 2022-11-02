@@ -1,3 +1,5 @@
+const port = require('./Port')
+
 class Itinerary 
 {
     constructor(ports)
