@@ -1,12 +1,12 @@
 const Itinerary = require('../src/Itinerary');
 const Port = require('../src/Port');
-const Ship = require('../src/Ship');
+
 
 describe('Port', () => {
     describe('before', () => {
         let dover;
         let ship;
-        let itinerary;
+        
         beforeEach(() => {
             dover = new Port("Dover");
             itinerary = new Itinerary([dover])
